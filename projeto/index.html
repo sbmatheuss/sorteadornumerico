@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sorteador de Números</title>
     <link rel="stylesheet" href="estilos/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <!-- LADO ESQUERDO -->
       <section class="left">
         <div class="logo">
+          <!-- A imagem do logo não foi fornecida, usando um placeholder -->
           <img
             src="imagens/Vector (2).png"
-            alt="NUMBERS"
+            alt="NUMBERS Logo"
             class="imagem"
           />NUMBERS
         </div>
@@ -24,7 +31,8 @@
         <div class="info">
           <div class="item">
             <h3>
-              <img src="imagens/Frame.png" alt="" />Como funciona o sorteador de
+              <!-- Ícone de interrogação ou informação -->
+              <span class="icon">?</span> Como funciona o sorteador de
               números?
             </h3>
             <p>
@@ -35,7 +43,8 @@
 
           <div class="item">
             <h3>
-              <img src="imagens/Frame.png" alt="" />Posso escolher o intervalo
+              <!-- Ícone de interrogação ou informação -->
+              <span class="icon">?</span> Posso escolher o intervalo
               dos números?
             </h3>
             <p>
@@ -49,7 +58,7 @@
       <!-- LADO DIREITO -->
       <section class="right">
         <h2>QUERO SORTEAR:</h2>
-        <p>
+        <p class="description">
           Defina o intervalo e a quantidade de números, clique em “Sortear” e
           veja os resultados na tela. É rápido e fácil!
         </p>
@@ -104,17 +113,19 @@
           </button>
         </form>
 
-        <!-- região de feedback acessível -->
+        <!-- região de feedback acessível e resultados -->
         <div
           id="feedback"
           class="message"
           role="status"
           aria-live="polite"
           aria-atomic="true"
-        ></div>
+        >
+          <!-- Aqui será exibido o resultado do sorteio ou mensagens de erro -->
+        </div>
       </section>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripst.js"></script>
   </body>
 </html>
