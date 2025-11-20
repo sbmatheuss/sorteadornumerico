@@ -163,6 +163,88 @@ input:checked + .slider::before {
     background: rgba(255,255,255,0.25);
 }
 
+/* Mensagens de feedback */
+.message {
+    display: inline-flex; /* use inline-flex para encaixar em texto/form */
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    border: 1px solid transparent;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 220ms ease, transform 220ms ease;
+    pointer-events: none;
+}
+
+/* Mostrar mensagem (quando o JS adicionar a classe .show) */
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Ícones simples com pseudo-elemento */
+.message::before {
+    display: inline-block;
+    min-width: 1.2rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+/* Sucesso */
+.message.success {
+    background: linear-gradient(180deg, #f0fff4 0%, #e6fff0 100%);
+    color: #05683d;
+    border-color: #d1f5dd;
+}
+.message.success::before {
+    content: "✔";
+    color: #0b7a47;
+}
+
+/* Erro */
+.message.error {
+    background: linear-gradient(180deg, #fff5f5 0%, #fff1f1 100%);
+    color: #7a1f1f;
+    border-color: #ffd6d6;
+}
+.message.error::before {
+    content: "⚠";
+    color: #9f2b2b;
+}
+
+/* Mensagem fixa no topo da seção direita (opcional) */
+.right .message {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Pequena animação de entrada alternativa */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.message.show { animation: fadeInUp 240ms ease both; }
+
+/* Botão de fechar (opcional) */
+.message .close {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    font-size: 1.05rem;
+    line-height: 1;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.8;
+}
+.message .close:hover { opacity: 1; }
+
 
 /* =========================================
    🔻 RESPONSIVIDADE
